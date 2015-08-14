@@ -25,13 +25,14 @@ fancybox: true
 mathjax: true
 
 # 是否开启动画效果
-animate: true
+animate: false
 
 # 是否在新窗口打开链接
 open_in_new: false
 
 # Miscellaneous
 google_analytics: ''
+baidu_analytics: bdd08892ad248a1e19e763fdd554a0a7
 favicon: /favicon.png
 
 #你的头像url
