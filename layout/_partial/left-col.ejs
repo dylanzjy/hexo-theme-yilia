@@ -18,7 +18,9 @@
 		<%}%>
 
 		<% if(theme.search) { %>
-		<%- partial('post/search') %>
+		<form class="site-search-form">
+		  <input type="search" id="st-search-input" class="st-search-input st-default-search-input" placeholder="Search" />
+		</form>
 		<%}%>
 
 		<%if(theme.switchbtn){%>
