@@ -17,7 +17,11 @@
 		<p class="header-subtitle"><%=theme.subtitle%></p>
 		<%}%>
 
-		<%if(theme.tagcloud){%>
+		<% if(theme.search) { %>
+		<%- partial('post/search') %>
+		<%}%>
+
+		<%if(theme.switchbtn){%>
 			<div class="switch-btn">
 				<div class="icon">
 					<div class="icon-ctn">
@@ -25,9 +29,11 @@
 							<div class="birdhouse"></div>
 							<div class="birdhouse_holes"></div>
 						</div>
+						<%if(theme.tagcloud){%>
 						<div class="icon-wrap icon-ribbon hide" data-idx="1">
 							<div class="ribbon"></div>
 						</div>
+						<%}%>
 						<%if(theme.friends && theme.friends.length != 0){%>
 						<div class="icon-wrap icon-link hide" data-idx="2">
 							<div class="loopback_l"></div>
@@ -47,7 +53,9 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>菜单</li>
+						<%if(theme.tagcloud){%>
 						<li>标签</li>
+						<%}%>
 						<%if(theme.friends && theme.friends.length != 0){%>
 						<li>友情链接</li>
 						<%}%>
@@ -87,7 +95,11 @@
 				<%}%>
 				
 				<%if(theme.friends && theme.friends.length != 0){%>
+				<%if(theme.tagcloud){%>
 				<section class="switch-part switch-part3">
+				<%}else{%>
+				<section class="switch-part switch-part2">
+				<%}%>
 					<div id="js-friends">
 					<% for (var i in theme.friends){ %>
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
